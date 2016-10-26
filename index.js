@@ -10,6 +10,7 @@ module.exports = {
             throw Error('dependency definition must be an object with keys being required module names and values being arrays of fields/methods required on those')
         }
         const moduleCache = new Map();
+        var fulfilled = false;
         return {
             register(moduleReferenceMap) {
                 Object.keys(definition).forEach((name) => {
@@ -25,9 +26,10 @@ module.exports = {
                     }
                     moduleCache.set(name, moduleReferenceMap[name])
                 })
+                fulfilled = true
             },
             require(name) {
-                if (moduleCache.size === 0) {
+                if (!fulfilled) {
                     throw Error(`No modules registered`)
                 }
                 if (!moduleCache.has(name)) {

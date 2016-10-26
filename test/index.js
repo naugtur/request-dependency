@@ -62,3 +62,29 @@ assert.throws(
         })
     }
 );
+
+const dependencyManager2 = requestDependency.createDependencyManager({
+    'name1': []
+})
+
+assert.throws(
+    () => {
+        dependencyManager2.require('name1')
+    }
+);
+
+const moduleReference = {};
+const dependencyManager3 = requestDependency.createDependencyManager({
+    'name1': []
+})
+
+dependencyManager3.register({
+    name1: moduleReference
+})
+assert.equal(dependencyManager3.require('name1'), moduleReference)
+
+assert.throws(
+    () => {
+        dependencyManager3.require('missingName')
+    }
+);
