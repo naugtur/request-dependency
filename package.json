@@ -1,0 +1,19 @@
+{
+  "name": "request-dependency",
+  "version": "1.0.0",
+  "description": "Requesting dependencies instead of DI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naugtur/request-dependency.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naugtur/request-dependency/issues"
+  },
+  "homepage": "https://github.com/naugtur/request-dependency#readme"
+}

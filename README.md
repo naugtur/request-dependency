@@ -1,2 +1,2 @@
-# reverse-dependency-injection
+# request-dependency
 Requesting dependencies instead of DI
